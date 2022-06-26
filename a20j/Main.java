@@ -5,15 +5,26 @@ public class Main
 public static void main(String[] args)  
     {  
         Scanner scn = new Scanner(System.in); //System.in is a standard input stream  
-        String str = scn.nextLine();              //reads string   
-        
-        String[] arr = str.split("WUB");
-        int len = arr.length;
-        for(int i = 0;i<len-1;i++){
-            System.out.print(arr[i]);
-            System.out.print(" ");
+        int n = scn.nextInt();              //reads string   
+        int[] intArray = new int[3*n];
+        int p =0;int q=0;int r=0;
+        for(int i = 0;i<n*3;i++){
+            int val = scn.nextInt();
+            intArray[i] = val;
         }
-        System.out.print(arr[len-1]);
+    
+        for(int i = 0;i<n*3;i+=3){
+            p = p+intArray[i];
+            q = q+intArray[i+1];
+            r = r+intArray[i+2];
+        }
+
+        if(p==0 && q==0 && r==0){
+            System.out.println("YES");
+        }
+        else{
+            System.out.println("NO");
+        }
 
     }  
 }  
